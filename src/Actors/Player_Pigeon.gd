@@ -1,17 +1,31 @@
 extends Actor
 
 var number_of_jumps: = 2
+onready var anim_player: AnimatedSprite = $AnimatedSprite
 
 func _on_EnemyDetector_body_entered(body: Node) -> void:
 	queue_free()
 
+func _ready() -> void:
+	anim_player.play()
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = calculate_direction()
+	
+	if direction.x > 0 :
+		anim_player.animation = "walk"
+		anim_player.flip_h = false
+	elif direction.x < 0:
+		anim_player.flip_h = true
+		anim_player.animation = "walk"
+	elif direction.x == 0 and is_on_floor(): 
+		anim_player.animation = "idle"
+	elif direction.y != 0:
+		anim_player.animation = "jump"
+	
 	velocity = calculate_linear_velocity(velocity, direction, speed, is_jump_interrupted) 
 	velocity = move_and_slide(velocity, FLOOR_NORMAL)
-
 
 func calculate_direction() -> Vector2:
 	if is_on_floor():
