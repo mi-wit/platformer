@@ -2,6 +2,10 @@ extends Actor
 
 var number_of_jumps: = 2
 
+func _on_EnemyDetector_body_entered(body: Node) -> void:
+	queue_free()
+
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = calculate_direction()
@@ -37,3 +41,4 @@ func calculate_linear_velocity(
 	if is_jump_interrupted:
 		new_velocity.y = 0.0
 	return new_velocity
+

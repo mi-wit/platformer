@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
+
+[node name="Level02" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65548, 0, 0, 65578, 0, 0, 131083, 0, 0, 131085, 0, 0, 131114, 0, 0, 196618, 0, 0, 196622, 0, 0, 196636, 0, 0, 196645, 0, 0, 196646, 0, 0, 196647, 0, 0, 196650, 0, 0, 262153, 0, 0, 262159, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262181, 0, 0, 262182, 0, 0, 262183, 0, 0, 262186, 0, 0, 327680, 0, 0, 327688, 0, 0, 327696, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327717, 0, 0, 327718, 0, 0, 327719, 0, 0, 327722, 0, 0, 393216, 0, 0, 393223, 0, 0, 393233, 0, 0, 393238, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393258, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, 448 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1536, 520 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1024, 520 )
+
+[node name="Coin4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1800, 336 )
+
+[node name="Coin5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1712, 504 )
+
+[node name="Coin6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3312, 136 )

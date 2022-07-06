@@ -20,6 +20,7 @@ position = Vector2( 0, -32 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 0, -8 )
+position = Vector2( 0, -32 )
+scale = Vector2( 4, 3.2 )
 process_parent = true
 physics_process_parent = true
