@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -6,10 +6,17 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/LevelTemplate2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/clouds_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/background.png" type="Texture" id=8]
+[ext_resource path="res://assets/tall_flowers.png" type="Texture" id=9]
 
 [node name="Level01" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 2064.0, 328.0 ]
+}
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 440 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 80, 80 )
 collision_layer = 8
@@ -18,29 +25,64 @@ format = 1
 tile_data = PoolIntArray( 65567, 0, 0, 65578, 0, 0, 131073, 0, 0, 131076, 0, 0, 131102, 0, 0, 131103, 0, 0, 131114, 0, 0, 196616, 0, 0, 196638, 0, 0, 196639, 0, 0, 196650, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 262177, 0, 0, 262186, 0, 0, 327680, 0, 0, 327702, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327722, 0, 0, 393216, 0, 0, 393218, 0, 0, 393229, 0, 0, 393238, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393258, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 200, 448 )
+position = Vector2( 200, 888 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1432, 536 )
+position = Vector2( 1432, 976 )
 
 [node name="Coin" parent="." instance=ExtResource( 4 )]
-position = Vector2( 360, 114 )
+position = Vector2( 360, 554 )
 
 [node name="Coin2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 680, 192 )
+position = Vector2( 680, 632 )
 
 [node name="Coin3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 120, 112 )
+position = Vector2( 120, 552 )
 
 [node name="Coin4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1800, 336 )
+position = Vector2( 1800, 776 )
 
 [node name="Coin5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1712, 504 )
+position = Vector2( 1712, 944 )
 
 [node name="Coin6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3312, 136 )
+position = Vector2( 3312, 576 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3120, 296 )
+position = Vector2( 3120, 736 )
 next_scene = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 968, 544 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="clouds_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 968, 536 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.2, 1 )
+motion_mirroring = Vector2( 320, 0 )
+
+[node name="tall_flowers" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 176, 880 )
+scale = Vector2( 0.457968, 0.457968 )
+texture = ExtResource( 9 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 128
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+visible = false
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 710, 0 )
+
+[node name="tall_flowers" type="Sprite" parent="ParallaxBackground2/ParallaxLayer4"]
+position = Vector2( 592, 1128 )
+scale = Vector2( 1.76197, 1.61121 )
+texture = ExtResource( 9 )
