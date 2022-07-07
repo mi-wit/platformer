@@ -1,5 +1,8 @@
 extends Actor
 
+
+# To jest plik gołębia
+
 var number_of_jumps: = 2
 onready var anim_player: AnimatedSprite = $AnimatedSprite
 

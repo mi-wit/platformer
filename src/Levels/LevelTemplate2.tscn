@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player_Pigeon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/tall_flowers.png" type="Texture" id=5]
 
 [node name="Level02" type="Node2D"]
+
+[node name="TallFlowers" type="Sprite" parent="."]
+position = Vector2( 425, 413 )
+texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 536 )
