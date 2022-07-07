@@ -17,7 +17,6 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 354, 986 )
-speed = Vector2( 500, 1000 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 440 )
