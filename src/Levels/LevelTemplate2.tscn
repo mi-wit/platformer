@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player_Pigeon.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tall_flowers.png" type="Texture" id=5]
 [ext_resource path="res://assets/house_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/house_1.png" type="Texture" id=7]
 
 [node name="Level02" type="Node2D"]
 
@@ -16,6 +17,10 @@ texture = ExtResource( 5 )
 [node name="House2" type="Sprite" parent="TallFlowers"]
 position = Vector2( 1209, 32 )
 texture = ExtResource( 6 )
+
+[node name="House1" type="Sprite" parent="TallFlowers"]
+position = Vector2( 606, -23 )
+texture = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 536 )
