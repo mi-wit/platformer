@@ -13,10 +13,10 @@ func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = calculate_direction()
 	
-	if direction.x > 0 :
+	if direction.x > 0 and is_on_floor():
 		anim_player.animation = "walk"
 		anim_player.flip_h = false
-	elif direction.x < 0:
+	elif direction.x < 0 and is_on_floor(): 
 		anim_player.flip_h = true
 		anim_player.animation = "walk"
 	elif direction.x == 0 and is_on_floor(): 
